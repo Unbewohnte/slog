@@ -1,0 +1,5 @@
+.vscode/
+test
+logs.log
+bin/
+build/
