@@ -3,6 +3,10 @@
 
 ## Usage 
 
+Logging is done via appropriate (info|warning|error|debug) log functions. Before calling them it is needed to execute `set_log_output` and pass `FILE*` of your liking (usually `stdout`), all log messages will be printed there unless you `set_log_output` somewhere other place again.
+
+There are log levels as well. By default all levels are set, but you can override them with `set_log_level` by either specifying one log level (`INFO`, `WARNING`, `ERROR`, `DEBUG`) or chaining them with `|`.
+
 ```
 #include "logger.h"
 
