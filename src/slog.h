@@ -40,6 +40,9 @@ int create_log_file(const char* path, const char* mode);
 // Does nothing if log output is std(out|error|input)
 void close_log_file();
 
+// Log a message with custom prefix. Counts as INFO log message
+void log_with_prefix(const char* prefix, const char* message, ...);
+
 // Log information
 void log_info(const char* message, ...);
 

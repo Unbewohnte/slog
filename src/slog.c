@@ -52,6 +52,19 @@ void close_log_file() {
     }
 }
 
+// Log a message with custom prefix. Counts as INFO log message
+void log_with_prefix(const char* prefix, const char* message, ...) {
+    if (LOG_OUTPUT && ((LOGGING_LEVEL & INFO) == INFO) && prefix && message) {
+        va_list arg;
+
+        fprintf(LOG_OUTPUT, "%s", prefix);
+        va_start(arg, message);
+        vfprintf(LOG_OUTPUT, message, arg);
+        va_end(arg);
+        fprintf(LOG_OUTPUT, "\n");
+    }
+}
+
 // Log information
 void log_info(const char* message, ...) {
     if (LOG_OUTPUT && ((LOGGING_LEVEL & INFO) == INFO) && message) {

@@ -13,4 +13,6 @@ int main() {
     close_log_file();
 
     log_warning("And to %s again", "stdout");
+
+    log_with_prefix("[Custom prefix] ", "5+(4*90)==%d", 5+(4*90));
 }
